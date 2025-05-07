@@ -8,11 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const switchTheme = document.getElementById("switch");
   const themeIcon = document.querySelector(".theme-toggle label");
 
-  // تحميل السمة المحفوظة
   const currentTheme = localStorage.getItem("theme") || "light";
   document.documentElement.setAttribute("data-theme", currentTheme);
 
-  // ضبط حالة التبديل والأيقونة
   if (currentTheme === "dark") {
     switchTheme.checked = true;
     themeIcon.textContent = "🌙";
@@ -20,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
     themeIcon.textContent = "☀️";
   }
 
-  // تغيير السمة عند التبديل
   switchTheme.addEventListener("change", function() {
     if (this.checked) {
       document.documentElement.setAttribute("data-theme", "dark");
