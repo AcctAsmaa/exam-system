@@ -18,7 +18,6 @@ signupForm.addEventListener('submit', function (e) {
   const password = passwordInput.value;
   const verifyPassword = verifyPasswordInput.value;
 
-  // Reset errors
   firstNameError.textContent = '';
   lastNameError.textContent = '';
   passwordError.textContent = '';
