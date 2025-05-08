@@ -4,11 +4,6 @@ const passwordInput = document.getElementById('password');
 const firstNameError = document.getElementById('firstNameError');
 const passwordError = document.getElementById('passwordError');
 
-
-
-
-
-
 function shakeInput(inputElement) {
   inputElement.classList.add('shake');
   setTimeout(() => inputElement.classList.remove('shake'), 300);
@@ -72,6 +67,6 @@ function togglePassword() {
     icon.textContent = "🙈";
   } else {
     passwordInput.type = "password";
-    icon.textContent = "👁️";   
+    icon.textContent = "👁️";
   }
 }

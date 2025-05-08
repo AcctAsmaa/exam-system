@@ -65,7 +65,7 @@ signupForm.addEventListener('submit', function (e) {
 });
 
 [firstNameInput, lastNameInput, passwordInput, verifyPasswordInput].forEach(input => {
-  input.addEventListener('input', function() {
+  input.addEventListener('input', function () {
     document.getElementById(this.id + 'Error').textContent = '';
   });
 });
@@ -90,7 +90,7 @@ function setupPasswordToggle(fieldId) {
       toggle.classList.remove('hidden');
     } else {
       toggle.classList.add('hidden');
-      input.type = 'password'; 
+      input.type = 'password';
       toggle.textContent = '👁️';
     }
   });

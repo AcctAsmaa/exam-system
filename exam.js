@@ -1,10 +1,5 @@
 
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const switchTheme = document.getElementById("switch");
   const themeIcon = document.querySelector(".theme-toggle label");
 
@@ -18,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     themeIcon.textContent = "☀️";
   }
 
-  switchTheme.addEventListener("change", function() {
+  switchTheme.addEventListener("change", function () {
     if (this.checked) {
       document.documentElement.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
@@ -109,7 +104,7 @@ function showQuestion() {
   updateButtons();
   updateMarkButton();
   update_numberOfQuestion();
-  
+
 }
 
 function updateButtons() {
@@ -186,7 +181,7 @@ function showResult() {
 
   setTimeout(() => {
     const percentage = (score / questions.length) * 100;
-localStorage.setItem("finalScore", percentage + "%");
+    localStorage.setItem("finalScore", percentage + "%");
 
     if (percentage >= 50) {
       location.replace(`success-result.html`);

@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .toggle-password {
   position: absolute;
   right: 10px;
@@ -162,7 +163,7 @@ button {
 
   right: 100px;
   top: 450px;
-  
+
 }
 
 @keyframes car {
@@ -276,6 +277,7 @@ button {
     display: none;
   }
 }
+
 .animated-objects {
   position: absolute;
   bottom: 40px;
