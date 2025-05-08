@@ -35,21 +35,21 @@ loginForm.addEventListener('submit', function (e) {
 
   if (firstName !== storedUser.firstName) {
     firstNameError.textContent = 'Incorrect First Name.';
-    firstNameInput.value = ''; // <-- يمسح الاسم
+    firstNameInput.value = '';
     shakeInput(firstNameInput);
     hasError = true;
   }
 
   if (password !== storedUser.password) {
     passwordError.textContent = 'Incorrect Password.';
-    passwordInput.value = ''; // <-- يمسح الباسورد
+    passwordInput.value = '';
     shakeInput(passwordInput);
     hasError = true;
   }
 
   if (!hasError) {
     localStorage.setItem('isLoggedIn', 'true');
-    window.location.href = 'exam.html';
+    location.replace('home.html');
   }
 });
 
