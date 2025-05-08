@@ -6,7 +6,7 @@ btn1.addEventListener('click', () => {
 });
 
 btn2.addEventListener('click', () => {
-  location.replace('exam.html');
+  location.replace('intermediate.html');
 });
 
 btn3.addEventListener('click', () => {

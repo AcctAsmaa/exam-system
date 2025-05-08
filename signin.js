@@ -25,17 +25,17 @@ signupForm.addEventListener('submit', function (e) {
 
   let valid = true;
 
-  const nameRegex = /^[A-Za-z]{2,}$/;
+  const nameRegex = /^[A-Za-z]{3,}$/;
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
   if (!nameRegex.test(firstName)) {
-    firstNameError.textContent = 'First name must be at least 2 letters.';
+    firstNameError.textContent = 'First name must be at least 3 letters.';
     firstNameInput.value = '';
     valid = false;
   }
 
   if (!nameRegex.test(lastName)) {
-    lastNameError.textContent = 'Last name must be at least 2 letters.';
+    lastNameError.textContent = 'Last name must be at least 3 letters.';
     lastNameInput.value = '';
     valid = false;
   }
