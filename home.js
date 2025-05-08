@@ -2,7 +2,7 @@ const btn1=document.getElementById("btn1");
 const btn2=document.getElementById("btn2");
 const btn3=document.getElementById("btn3");
 btn1.addEventListener('click',()=>{
-location.replace('advanced.html');
+location.replace('exam.html');
 });
 
 btn2.addEventListener('click',()=>{
