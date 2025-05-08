@@ -6,7 +6,7 @@ location.replace('exam.html');
 });
 
 btn2.addEventListener('click',()=>{
-location.replace('advanced.html');
+location.replace('exam.html');
 });
 
 btn3.addEventListener('click',()=>{
