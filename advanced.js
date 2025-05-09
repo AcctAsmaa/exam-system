@@ -98,9 +98,9 @@
 
 
         markBtn.addEventListener("click", () => {
-            markedQuestion = currentQuestion; // احفظ السؤال الحالي فقط كمعلّم
-            renderMarkedFlags();              // حدّث زر العلم
-            loadNextQuestion();               // انتقل للسؤال التالي
+            markedQuestion = currentQuestion; 
+            renderMarkedFlags();               
+            loadNextQuestion();                  
         });
 
         function renderMarkedFlags() {

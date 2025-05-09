@@ -156,7 +156,14 @@ function startTimer() {
   }, 1000);
 }
 
+
 function endExam() {
+  if (Object.keys(selectedAnswers).length < questions.length) {
+    alert("⚠️ Please answer all questions before submitting the exam.");
+    return;
+  }
+
+
   clearInterval(timerInterval);
   timerDisplay.style.display = 'none';
   markedPopup.style.display = 'none';
@@ -165,6 +172,7 @@ function endExam() {
   localStorage.setItem('examResult', JSON.stringify({ name: user.firstName, score }));
   showResult();
 }
+
 
 function calculateScore() {
   score = 0;

@@ -158,6 +158,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
   function endExam() {
+     if (Object.keys(selectedAnswers).length < questions.length) {
+    alert("⚠️ Please answer all questions before submitting the exam.");
+    return;
+  }
     clearInterval(timerInterval);
     timerDisplay.style.display = 'none';
     markedPopup.style.display = 'none';
