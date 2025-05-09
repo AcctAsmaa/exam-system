@@ -72,15 +72,24 @@
     <div class="container">
         <h1>⏰ Time's Up!</h1>
         <img width="200px" src="img/4555.jpg">
-
-        <p>You ran out of time. Your score was: <span id="score"></span></p>
-
+        
+        <p>Your score: <span id="score"></span></p>
+        <p>Answered questions: <span id="answered"></span></p>
+        
+        
         <button onclick="location.href='home.html'">Retry Quiz</button>
     </div>
 
     <script>
-        let score = localStorage.getItem('score');
-        document.getElementById('score').textContent = score ? score : 'N/A';  
+        let score = localStorage.getItem('userScore');
+        let totalQuestions = localStorage.getItem('totalQuestions');
+        let selectedAnswers = JSON.parse(localStorage.getItem('selectedAnswers')) || {};
+
+       
+        document.getElementById('score').textContent = score ? score : 'N/A';
+        document.getElementById('answered').textContent = `${Object.keys(selectedAnswers).length} / ${totalQuestions} answered`;
+
+       
     </script>
 </body>
 
