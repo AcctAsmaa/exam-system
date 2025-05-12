@@ -60,7 +60,7 @@ signupForm.addEventListener('submit', function (e) {
     };
 
     localStorage.setItem('examUser', JSON.stringify(userData));
-    location.replace(`login.html`);
+    location.replace(`../pages/login.html`);
   }
 });
 

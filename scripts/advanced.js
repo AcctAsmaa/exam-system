@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let timerInterval;
   let markedQuestions = [];
   
-  fetch('intermediate.json')
+  fetch('../intermediate.json')
     .then(response => response.json())
     .then(data => {
       questions = shuffleArray(data);
@@ -64,12 +64,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
       
   
+
+
+
+
+
   function startExam() {
     currentQuestion = 0;
     score = 0;
     selectedAnswers = {};
     markedQuestions = [];
-    timerSeconds = 600;
+    timerSeconds = 60;
     markedQuestionsDiv.innerHTML = '';
     markedPopup.classList.add('hidden');
     progressBar.style.width = '0%';
@@ -144,24 +149,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
   function startTimer() {
-    clearInterval(timerInterval);
-    timerInterval = setInterval(() => {
-      timerSeconds--;
-      let minutes = Math.floor(timerSeconds / 60);
-      let seconds = timerSeconds % 60;
-      timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-      if (timerSeconds <= 0) {
-        clearInterval(timerInterval);
-        endExam();
-      }
-    }, 1000);
-  }
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    timerSeconds--;
+    let minutes = Math.floor(timerSeconds / 60);
+    let seconds = timerSeconds % 60;
+    timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    
+    if (timerSeconds <= 0) {
+      clearInterval(timerInterval);
+
+      timerDisplay.style.display = 'none';
+      markedPopup.style.display = 'none';
+      examHeader.style.display = 'none';
+
+      calculateScore();
+
+      localStorage.setItem('userScore', score); 
+      localStorage.setItem('totalQuestions', questions.length); 
+      localStorage.setItem('selectedAnswers', JSON.stringify(selectedAnswers)); 
+
+      location.replace('timeout.html');
+    }
+  }, 1000);
+}
+
   
   function endExam() {
-     if (Object.keys(selectedAnswers).length < questions.length) {
-    alert("⚠️ Please answer all questions before submitting the exam.");
-    return;
-  }
+   
     clearInterval(timerInterval);
     timerDisplay.style.display = 'none';
     markedPopup.style.display = 'none';
@@ -189,9 +204,9 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("finalScore", percentage + "%");
   
       if (percentage >= 50) {
-        location.replace(`success-result.html`);
+        location.replace(`../pages/success-result.html`);
       } else {
-        location.replace('fail_result.html');
+        location.replace('../pages/fail_result.html');
       }
     }, 3000);
   }
@@ -282,7 +297,15 @@ document.addEventListener("DOMContentLoaded", function () {
   
   
   
-  
+  submitButton.addEventListener("click", function(event) {
+  if (Object.keys(selectedAnswers).length < questions.length) {
+        event.preventDefault(); 
+
+    alert("⚠️ Please answer all questions before submitting the exam.");
+    return;
+  }
+
+});
   
   
   

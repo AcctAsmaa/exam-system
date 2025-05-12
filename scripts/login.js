@@ -44,7 +44,7 @@ loginForm.addEventListener('submit', function (e) {
 
   if (!hasError) {
     localStorage.setItem('isLoggedIn', 'true');
-    location.replace('home.html');
+    location.replace('../pages/home.html');
   }
 });
 
