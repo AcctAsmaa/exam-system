@@ -65,16 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
       
   
 
-
-
-
-
   function startExam() {
     currentQuestion = 0;
     score = 0;
     selectedAnswers = {};
     markedQuestions = [];
-    timerSeconds = 10;
+    timerSeconds = 30;
     markedQuestionsDiv.innerHTML = '';
     markedPopup.classList.add('hidden');
     progressBar.style.width = '0%';
@@ -86,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
   nextButton.addEventListener('click', nextQuestion);
   prevButton.addEventListener('click', prevQuestion);
-  submitButton.addEventListener('click', endExam);
   markReviewBtn.addEventListener('click', toggleMarkReview);
   
   
@@ -294,7 +289,17 @@ document.addEventListener("DOMContentLoaded", function () {
   
   
   
-  
+  submitButton.addEventListener("click", function() {
+  if (Object.keys(selectedAnswers).length === questions.length) {
+    endExam();}
+    else{
+ alert("⚠️ Please answer all questions before submitting the exam.");
+    }
+   
+  return;
+
+});    
+
   
   
   
