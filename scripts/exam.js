@@ -63,10 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
         questionCard.innerHTML = "<h3>⚠️ Failed to load questions.</h3>";
     });
       
-  
-
-
-
 
 
   function startExam() {
