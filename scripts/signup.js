@@ -25,8 +25,8 @@ signupForm.addEventListener('submit', function (e) {
 
   let valid = true;
 
-  const nameRegex = /^[A-Za-z]{3,}$/;
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+  const nameRegex = /^[A-Za-z]{3,10}$/;
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/;
 
   if (!nameRegex.test(firstName)) {
     firstNameError.textContent = 'First name must be at least 3 letters.';
@@ -60,7 +60,7 @@ signupForm.addEventListener('submit', function (e) {
     };
 
     localStorage.setItem('examUser', JSON.stringify(userData));
-    location.replace(`../pages/login.html`);
+window.location.href = '/exam-system/pages/login.html';
   }
 });
 
